@@ -1,16 +1,15 @@
 function newItem() {
   //javascript
-  //1. Adding a new item to the list of items:
-  let li = document.createElement("li");
-  let inputValue = document.getElementById("input").value;
-  let text = document.createTextNode(inputValue);
-  li.appendChild(text);
+  //1. Adding a new item to the todo list in jquery:
+
+  const li = $('<li></li>');
+  const inputValue = $("#input").val();
+  li.append(inputValue);
 
   if (inputValue === "") {
-    alert("You must write something!");
+    alert("Added item cannot be blank!");
   } else {
-    let list = document.querySelector("#list");
-    list.appendChild(li);
+    $('#list').append(li);
   }
 
   //2. Crossing out an item from the list of items:
